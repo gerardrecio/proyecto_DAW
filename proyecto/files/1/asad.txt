@@ -1,0 +1,12 @@
+- Encriptar passwords al registrar en el servidor & leer las passwords encriptadas en el login [OK]
+- Recargar la tabla al eliminar archivos [OK]
+- Perfil [OK]
+- Sistema de Logs de usuario [OK]
+- Graficos [OK]
+- Añadir mysqli_close donde toque [OK]
+- Hacer email de olvidar contraseña [OK]
+
+- Descargar Archivos [OK]
+
+--------POR HACER---------------
+- Subir Archivos [NOK]

@@ -30,8 +30,8 @@
     <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
     <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"> 
-
+    <link rel="stylesheet" href="vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    
 
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -61,8 +61,8 @@
                         <span class="text-white"><?php get_sex($_SESSION['email'])?></span> <span class="text-white" id="nombre"><?php get_username($_SESSION['email'])?></span><span id="idx" class="d-none"><?php get_echo_id($_SESSION['email'])?></span>
                     </li>
                     <h3 class="menu-title"></h3><!-- /.menu-title -->
-                    <li class="active">
-                        <a href="#"> <i class="menu-icon fa fa-dashboard"></i>Panel de Control</a>
+                    <li>
+                        <a href="index.php"> <i class="menu-icon fa fa-dashboard"></i>Panel de Control</a>
                     </li>
                     <li>
                         <a href="subir.php"> <i class="menu-icon fa fa-share-square-o"></i>Subir Archivos</a>
@@ -70,8 +70,8 @@
                     <li>
                         <a href="actividad.php"> <i class="menu-icon fa fa-pencil-square-o"></i>Registro de Actividad</a>
                     </li>
-                    <li>
-                        <a href="graficos.php"> <i class="menu-icon fa fa-bar-chart-o"></i>Graficos</a>
+                    <li class="active">
+                        <a href="#"> <i class="menu-icon fa fa-bar-chart-o"></i>Graficos</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -260,25 +260,15 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Archivos</strong>
+                        <strong class="card-title">Graficos</strong>
                     </div>
-                    <div class="card-body">
-                        <table class="table table-striped table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">Sel.</th>
-                                    <th class="text-center">Nombre</th>
-                                    <th class="text-center">Peso</th>
-                                    <th class="text-center">Visibilidad</th>
-                                    <th class="text-center">Estado</th>
-                                    <th class="text-center">Clave</th>
-                                    <th class="text-center">Opciones</th>
-                                </tr>
-                            </thead>
-                            <tbody class="xtbody">
-                            </tbody>
-                        </table>
-                            <button type='button' style='color:white;' class='btn bg-flat-color-4 mr-3 rounded xeliminar d-none'>Eliminar Archivos</button>
+                    <div class="card-body row">
+                        <div class="col-md-5">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                        <div class="offset-md-2 col-md-5">
+                            <canvas id="myChartx"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -293,13 +283,21 @@
     <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
     <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
     <script src="vendors/jszip/dist/jszip.min.js"></script>
     <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-    <script src="vendors/proper/load_language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.0/dist/chart.min.js"></script>
+    <script src="vendors/proper/load_charts.js"></script>
 
 
 </body>

@@ -15,7 +15,8 @@
 
 	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>	<!--3.6.0 JQUERY-->
 	<script src="https://kit.fontawesome.com/7c47a47b14.js" crossorigin="anonymous"></script>
-	<script src="js/index.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="js/descargas.js"></script>
 
   </head>
 
@@ -30,24 +31,25 @@
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-6">
 					<div class="login-wrap p-0 background rounded">
-		      	<h3 class="mb-4 text-center pt-2">Descargar Archivos</h3>
-		      	<form action="#" class="signin-form">
-		      		<div class="form-group col-12 offset-lg-1 col-lg-10 row">
+		      	<h3 class="mb-4 text-center pt-2">Descargar Archivo</h3>
+		      	<form id="formulario" action="#" class="signin-form">
+		      		<div class="form-group col-12 offset-lg-1 col-lg-10 row pb-3">
 						<i class="fas fa-file-download scale col-3 col-lg-2 mt-3"></i>
 							<div class="col-9 col-lg-10">
-								<label>Archivo: ArchivoEjemp.php</label><br>
-								<label>Peso: 500.88 GB</label><br>
-								<label>Subido por: John Doe</label>
+								<label id="file">Archivo: ArchivoEjemp.php</label><br>
+								<label id="peso">Peso: 500.88 GB</label><br>
+								<label id="subido">Subido por: John Doe</label>
 							</div>
 						  <!--asdads-->
 		      		</div>
 
-						<div class="form-group offset-lg-1 col-lg-10 pb-2">
+						<div id="key" class="form-group offset-lg-1 col-lg-10 pb-2">
 							<p>Introduce la clave de descarga:</p>
-							<input type="text" class="form-control center" placeholder="Clave" required>
+							<input type="text" id="clave" class="form-control center" placeholder="Clave" required>
 						</div>
-	            <div class="form-group offset-lg-1 col-lg-10 pb-2">
-	            	<button type="button" class="form-control btn btn-primary submit px-3 mb-3" disabled>Descargar Archivos</button>
+	            <div id="accept_key" class="form-group offset-lg-1 col-lg-10 pb-2">
+					<iframe id="my_iframe" class="d-none"></iframe>
+	            	<button type="button" id="xdescargar" class="form-control btn btn-primary submit px-3 mb-3" disabled>Descargar Archivo</button>
 	            </div>
 
 	            </form>

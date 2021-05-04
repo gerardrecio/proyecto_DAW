@@ -17,7 +17,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-	<script src="js/index.js"></script>
+	<script src="js/index_reg.js"></script>
   </head>
 
 	<body class="imge">
@@ -32,33 +32,43 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0 background rounded">
 		      	<h3 class="mb-2 text-center pt-2">Registro</h3>
-		      	<form action="panel/index.html" onsubmit="return comprobacion()" class="signin-form" method="POST">
+		      	<form action="index.php" onsubmit="return comprobacion()" class="signin-form" method="POST">
 					<div class="form-group offset-lg-1 col-lg-10">
-					  	<label>Usuario:</label>
-		      			<input id="user-field" type="text" class="form-control center" placeholder="Usuario o email" required>
+					  	<label>Email:</label>
+		      			<input id="email-field" type="text" name="email" class="form-control center" placeholder="Email" required>
 		      		</div>
 
-					<div class="form-group offset-lg-1 col-lg-10">
-							<label>Nombre:</label>
-							<input id="user-field" type="text" class="form-control center" placeholder="Nombre" required>
+					<div class="row">
+						<div class="form-group offset-lg-1 col-lg-5">
+								<label>Nombre:</label>
+								<input id="nombre-field" type="text" name="nombre" class="form-control center" placeholder="Nombre" required>
+						</div>
+						<div class="form-group col-lg-5">
+								<label>Sexo:</label>
+								<select name="sexo" id="sexo" class="form-control center">
+									<option value="0">Hombre</option>
+									<option value="1">Mujer</option>
+								</select>
+  						</div>
 					</div>
+
 					<div class="form-group offset-lg-1 col-lg-10">
 								<label>Nacimiento:</label>
-								<input id="user-field" type="date" class="form-control center" placeholder="Fecha de Nacimiento" required>
+								<input id="nacimiento-field" type="date" name="nacimiento" class="form-control center" placeholder="Fecha de Nacimiento" required>
 						</div>
 					<div class="row">
 						<div class="form-group offset-lg-1 col-lg-5">
 								<label>1 Apellido:</label>
-								<input id="user-field" type="text" class="form-control center" placeholder="Apellido" required>
+								<input id="apellido-field" type="text" name="apellido_uno" class="form-control center" placeholder="Apellido" required>
 						</div>
 						<div class="form-group col-lg-5">
 								<label>2 Apellido:</label>
-								<input id="user-field" type="text" class="form-control center" placeholder="Apellido" required>
+								<input id="segundo-field" type="text" name="apellido_dos" class="form-control center" placeholder="Apellido" required>
 						</div>
 					</div>
 					<div class="offset-lg-1 col-lg-10">
 						<label>Contraseña:</label>
-						<input id="password-field" type="password" class="form-control center" placeholder="Contraseña" required>
+						<input id="password-field" type="password" name="password" class="form-control center" placeholder="Contraseña" required>
 						<span toggle="#password-field" class="fa fa-fw fa-eye mr-2 mt-3 field-icon toggle-password"></span>
 					</div>
 				<br>

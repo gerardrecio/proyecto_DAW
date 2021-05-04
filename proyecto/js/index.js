@@ -19,12 +19,8 @@ $( document ).ready(function() {
         }
     });
 
-    //para ir al login
-    $(".xacceso").on("click", function(){
-        window.location.href = "index.php";
-    });
-
     $(".xregistro").on("click", function(){
+        event.preventDefault();
         window.location.href = "registro.php";
     });
 });

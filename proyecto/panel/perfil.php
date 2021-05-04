@@ -65,7 +65,13 @@
                         <a href="index.php"> <i class="menu-icon fa fa-dashboard"></i>Panel de Control</a>
                     </li>
                     <li>
-                        <a href="index.html"> <i class="menu-icon fa fa-share-square-o"></i>Subir Archivos</a>
+                        <a href="subir.php"> <i class="menu-icon fa fa-share-square-o"></i>Subir Archivos</a>
+                    </li>
+                    <li>
+                        <a href="actividad.php"> <i class="menu-icon fa fa-pencil-square-o"></i>Registro de Actividad</a>
+                    </li>
+                    <li>
+                        <a href="graficos.php"> <i class="menu-icon fa fa-bar-chart-o"></i>Graficos</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -209,7 +215,7 @@
                             <i class="fa fa-archive fa-3x"></i>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count"><?php get_files_user(get_id($_SESSION['email']))?></span>
+                            <span class="count xtotal"><?php get_files_user(get_id($_SESSION['email']))?></span>
                         </h4>
                         <p class="text-light">Archivos Subidos</p>
 
@@ -226,7 +232,7 @@
                             <i class="fa fa-eye-slash fa-3x"></i>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count"><?php get_files_private(get_id($_SESSION['email']))?></span>
+                            <span class="count xprivado"><?php get_files_private(get_id($_SESSION['email']))?></span>
                         </h4>
                         <p class="text-light">Archivos Privados</p>
 
@@ -242,7 +248,7 @@
                             <i class="fa fa-eye fa-3x"></i>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count"><?php get_files_public(get_id($_SESSION['email']))?></span>
+                            <span class="count xpublico"><?php get_files_public(get_id($_SESSION['email']))?></span>
                         </h4>
                         <p class="text-light">Archivos Publicos</p>
                     </div>
@@ -263,42 +269,42 @@
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label text-center">Usuario:</label>
                                 <div class="col-sm-8">
-                                  <input type="text" class="form-control" id="inputPassword" placeholder="Usuario" disabled>
+                                  <input type="text" class="form-control" id="inputUser" placeholder="Usuario" disabled>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label text-center">Nombre:</label>
                                 <div class="col-sm-4">
-                                  <input type="text" class="form-control" id="inputPassword" placeholder="Nombre" disabled>
+                                  <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" disabled>
                                 </div>
                                 <div class="col-sm-4">
-                                  <input type="text" class="form-control" id="inputPassword" placeholder="Apellido" disabled>
+                                  <input type="text" class="form-control" id="inputApellido" placeholder="Apellido" disabled>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label text-center">Password:</label>
                                 <div class="col-sm-8">
-                                  <input type="text" class="form-control" id="inputPassword" placeholder="Password">
+                                  <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label text-center">Nueva Password:</label>
                                 <div class="col-sm-8">
-                                  <input type="text" class="form-control" id="inputPassword" placeholder="Password Nueva">
+                                  <input type="password" class="form-control" id="inputPasswordx" placeholder="Password Nueva">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label text-center">Fecha Nacimiento:</label>
                                 <div class="col-sm-8">
-                                  <input type="date" class="form-control" id="inputPassword" placeholder="Fecha Nacimiento" disabled>
+                                  <input type="date" class="form-control" id="inputNacimiento" placeholder="Fecha Nacimiento" disabled>
                                 </div>
                             </div>
                             <br>
-                            <button type="button" style="color: White;" class="btn col-sm-6 bg-flat-color-5 mr-3 rounded">Modificar Password</button>
+                            <button type="button" style="color: White;" class="btn col-sm-6 bg-flat-color-5 mr-3 rounded xpassword">Modificar Password</button>
                         </div>
                     </div>
                 </div>
@@ -353,7 +359,8 @@
     <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
     <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
     <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
-    <script src="vendors/proper/load_language.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="vendors/proper/load_profile.js"></script>
 
 
 </body>

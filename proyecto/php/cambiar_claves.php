@@ -12,4 +12,6 @@
 
     $res = mysqli_query($enlace, $query);
 
+    mysqli_close($enlace);
+
 ?>

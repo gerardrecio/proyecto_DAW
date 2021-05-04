@@ -37,7 +37,7 @@
 		      	<h3 class="mb-4 text-center pt-2">Login</h3>
 		      	<form action="php/recibido.php" onsubmit="return comprobacion()" class="signin-form" method="POST">
 		      		<div class="form-group offset-lg-1 col-lg-10">
-		      			<input id="user-field" name="user" type="text" class="form-control center" placeholder="Usuario o email" required>
+		      			<input id="user-field" name="user" type="text" class="form-control center" placeholder="Email" required>
 		      		</div>
 	            <div class="form-group offset-lg-1 col-lg-10">
 	              <input id="password-field" type="password" class="form-control center" placeholder="Contraseña" required>
