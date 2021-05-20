@@ -34,28 +34,44 @@ function comprobacion(){
     let x_user = $("#user-field").val().trim();
     let x_password = $("#password-field").val().trim();
 
+    let xmem = /[=*\/\-,><!¿?"·$%&\/]/gmi; //expresion regular para detectar los caracteres que puedan provocar un SQL Injection
+
+    let mem = /[=*\/\-.,><!¿?"·$%&\/]/gmi;  //expresion regular para detectar los caracteres que puedan provocar un SQL Injection
+
     if (x_user != "" && x_password != ""){
+        
+        if (xmem.test(x_user) == true || mem.test(x_password) == true){
 
-        //setea el ajax asyncronamente para que haga el callback bien Tiene que especificarse en los siguientes callbacks para que vuelva a la normalidad (async: true);
-        $.ajaxSetup({async: false});
+            Swal.fire({
+                icon: 'error',
+                title: 'Login',
+                text: 'No se pueden usar caracteres no soportados'
+            });
+        }
+        else
+        {
 
-        //hace el callback de $.post
-        $.post("php/comprobar_datos.php", {user: x_user, password: x_password}, function(data){
+            //setea el ajax asyncronamente para que haga el callback bien Tiene que especificarse en los siguientes callbacks para que vuelva a la normalidad (async: true);
+            $.ajaxSetup({async: false});
 
-                if (data == 1){
+            //hace el callback de $.post
+            $.post("php/comprobar_datos.php", {user: x_user, password: x_password}, function(data){
 
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Login',
-                        text: 'Los datos son incorrectos'
-                    });
+                    if (data == 1){
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Login',
+                            text: 'Los datos son incorrectos'
+                        });
+                    }
+                    else
+                    {
+                        ok = true;
+                    }
                 }
-                else
-                {
-                    ok = true;
-                }
-            }
-        )
+            )
+        }
     }
 
     return ok;
