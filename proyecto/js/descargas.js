@@ -81,23 +81,39 @@ $(document).ready(function() {
     });
 
     $("#xdescargar").on("click", function(){
-        $.post("php/comprobar_clave.php", {clave: $("#clave").val().trim(), archivo: findGetParameter("archivo"), id_user: findGetParameter("id")}, function(data){
 
-            console.log(data);
+        //aqui va el regEX
 
-            if (data == 1){
+        let mem = /[=*\/\-.,><!¿?"·$%&\/]/gmi;  //expresion regular para detectar los caracteres que puedan provocar un SQL Injection
 
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Verificacion Claves',
-                    text: 'La clave no es correcta'
-                  });
-            }
-            else
-            {
-                downloadURI("files/"+findGetParameter("id")+"/"+findGetParameter("archivo")+"", findGetParameter("archivo"));
-            }
-        });
+        if (mem.test($("#clave").val().trim()) == true){
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Verificacion Claves',
+                text: 'La clave tiene caracteres no soportados'
+              });
+        }
+        else
+        {
+            $.post("php/comprobar_clave.php", {clave: $("#clave").val().trim(), archivo: findGetParameter("archivo"), id_user: findGetParameter("id")}, function(data){
+
+                console.log(data);
+    
+                if (data == 1){
+    
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Verificacion Claves',
+                        text: 'La clave no es correcta'
+                      });
+                }
+                else
+                {
+                    downloadURI("files/"+findGetParameter("id")+"/"+findGetParameter("archivo")+"", findGetParameter("archivo"));
+                }
+            });
+        }
     });
 
 });
