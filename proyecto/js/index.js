@@ -23,6 +23,17 @@ $( document ).ready(function() {
         event.preventDefault();
         window.location.href = "registro.php";
     });
+
+    $(".xolvidada").on("click", function(){
+        $.post("php/mail.php", {email: $("#user-field").val().trim()});
+        
+        Swal.fire({
+            icon: 'success',
+            title: 'Login',
+            text: 'Si el correo existe, se enviara un email con una password nueva'
+        });
+
+    });
 });
 
 //esta funcion valida si el formulario es apto o no para acceder al panel comprobando previamente los datos

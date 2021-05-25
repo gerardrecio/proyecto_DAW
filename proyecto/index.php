@@ -58,7 +58,7 @@
 						</label>
 					</div>
 					<div class="w-50 text-md-right mr-3">
-						<a href="#" style="color: #fff">¿ Contraseña olvidada ?</a>
+						<a href="#" style="color: #fff" class="xolvidada">¿ Contraseña olvidada ?</a>
 					</div>
 	            </div>
 	            </form>
